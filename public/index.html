@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- link css -->
+    <link href="style.css" rel="stylesheet">
+    <!-- CSS only -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
+    <!-- JavaScript Bundle with Popper -->
+    <script crossorigin="anonymous"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Landing page</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <nav>
+        <div class="logo">
+            <a href="#comments"> <img src="logo.png"> </a>
+
+        </div>
+        <a href="#comments"><button type="button" >Comments</button></a>
+    </nav>
+    <main>
+        <div class="main__text">
+            <br>
+            <h1>Welcome to Santa Claus Survey Page! </h1>
+            <h2>We care about your opnion!</h2> <br> <br>
+
+            </head>
+            <body>
+            <h3>Mr. Santa might arrive at your house in: </h3><br>
+            <div class="countdown">
+
+                <p id="demo"></p>
+
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Dec 25, 2022 00:00:00").getTime();
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function () {
+
+                        // Get today's date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now and the count down date
+                        var distance = countDownDate - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("demo").innerHTML = days + " days " + hours + "h "
+                            + minutes + "m " + seconds + "s ";
+
+                        // If the count down is over, write some text
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("demo").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+
+                </script>
+                <br>
+            </div>
+            </button>
+            </body>
+            <div class="main__text-footer">
+                <div>
+                    <h4>Why Do We Care?</h4>
+                    <p align="justify">
+                        There is nothing we care more than costumer satisfaction at North Pole Factory. We have noticed
+                        that many kids and adults
+                        have stopped sending letters to us! This could be due to our toys delivery service, wrong choice
+                        of toys, lost of interest...
+                        Whatever the reason is, we want to hear from you! Please let us know and we will do the best to
+                        improve our services!
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Is Santa Claus going to read our messages?</h4>
+                    <p align="justify">
+                        Very likely!! Even though there are thousands of elves working in the North Pole Factory, Santa
+                        makes sure to participate in every
+                        step of the process. It goes from making the toys to reading all the letters! First the elves
+                        are going to read and filter the
+                        genuine comments that then will be pass to Santa. So please make sure to honest and also kind
+                        when writting your message to us!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- end main text -->
+        <div class="main__img">
+            <img lenght="100%" src="Global-warming.gif" width="100%">
+        </div>
+        <!-- end main -->
+
+
+    </main>
+    <div class="CommentSection">
+        <br>
+        <h3 align="justify"><img src="snowlogo.png" width="70px">Now it is Your Time to Talk! </h3><br>
+
+        <p>Please leave a short comment explaining how Santa and the Elves could improve their services to make you
+            happier! Your comment
+            can be uo to 280 characters and it will be private!
+            We will do our best to follow your advice!
+            See you on the 25th!</p>
+        <div class="card">
+            <div class="card-body">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <textarea cols="55" id="comment" maxlength="280" placeholder="@comment" rows="5" type="text"></textarea>
+                <div id="textarea_feedback"></div>
+
+                <ul id="menu">
+                    <li><img src="camera-solid.svg" width="25px"></li>
+                    <li><img src="video-solid.svg" width="25px"></li>
+                    <li><img src="chart-column-solid.svg" width="25px"></li>
+                    <li><button onclick="postComments()">Post</button></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="comments"></div>
+
+
+        <script src="getcomments.js"></script>
+        <script src="postcomments.js"></script>
+        <script src="main.js"></script>
+    </div>
+</div>
+</body>
+
+</html>
